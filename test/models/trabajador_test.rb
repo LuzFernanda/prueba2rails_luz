@@ -13,4 +13,9 @@ class TrabajadorTest < ActiveSupport::TestCase
   test 'trabajador tiene muchas operaciones' do
   	assert_includes @trabajador.operacions, operacions(:operacion_one)
   end
+
+  test 'borrar operaciones cuando el trabajado es eliminado' do
+    @trabajador.destroy
+    assert_empty Operacion.where(trabajador_id: @trabajador.id)
+  end
 end

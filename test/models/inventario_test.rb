@@ -7,4 +7,5 @@ class InventarioTest < ActiveSupport::TestCase
  test 'inventario tiene una operacion' do
  	assert_not_nil inventarios(:one).operacion
  end
+ 
 end
